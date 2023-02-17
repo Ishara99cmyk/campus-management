@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//import axios from "axios";
 
 function App() {
+  const [data, setData] = React.useState();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(data);
+  };
+
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Username</label>
+      </div>
+
+      <div>
+        <input type="text" name="username" onChange={handleChange} required />
+      </div>
+
+      <div>
+        <label>Password</label>
+      </div>
+
+      <div>
+        <input
+          type="password"
+          name="password"
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
   );
 }
 

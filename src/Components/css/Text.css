@@ -1,0 +1,14 @@
+.welcomeText {
+  height: 100vh;
+  width: 50%;
+  float: left;
+  z-index: +1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 200px;
+}
+
+.welcomeText div {
+  margin-top: 0px;
+}
